@@ -22,7 +22,7 @@ import java.sql.SQLException;
  * @author tanay
  */
 public class get_Deals {
-    static int i;
+     int i;
     public deal_bean get_img(String a,String b) throws SQLException, FileNotFoundException, IOException
     {
         
@@ -41,8 +41,8 @@ public class get_Deals {
             db.setLink(rs.getString(5));
             db.setTime_slot(rs.getString(3));
              InputStream in = rs.getBinaryStream(4);
-             f = new FileOutputStream(new File("/home/tanay/Deal"+ ++i +".jpg"));
-             db.setImg_path("/home/tanay/Deal"+ i +".jpg");
+             f = new FileOutputStream(new File("/home/tanay/NetBeansProjects/socgen_hackathon/web/img/Deal"+ ++i +".jpg"));
+             db.setImg_path("/home/tanay/NetBeansProjects/socgen_hackathon/web/img/Deal"+ i +".jpg");
                 
              int c = 0;
              while ((c = in.read()) > -1)

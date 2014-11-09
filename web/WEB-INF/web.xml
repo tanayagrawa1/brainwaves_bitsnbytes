@@ -5,16 +5,24 @@
         <servlet-class>hack.action.login_servlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Inset_servlet</servlet-name>
-        <servlet-class>hack.action.Inset_servlet</servlet-class>
+        <servlet-name>Insert_servlet</servlet-name>
+        <servlet-class>hack.action.Insert_servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>user_pref</servlet-name>
+        <servlet-class>hack.action.user_pref</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>login_servlet</servlet-name>
         <url-pattern>/login_servlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Inset_servlet</servlet-name>
-        <url-pattern>/Inset_servlet</url-pattern>
+        <servlet-name>Insert_servlet</servlet-name>
+        <url-pattern>/Insert_servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>user_pref</servlet-name>
+        <url-pattern>/user_pref</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

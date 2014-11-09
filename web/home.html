@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Welcome to ABC netbanking</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Add custom CSS here -->
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">ABC Banking Soutions</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" class="scroll-link" data-id="home">Home</a></li>
+      <li><a href="#" class="scroll-link" data-id="about">About Us</a></li>
+      <li><a href="#" class="scroll-link" data-id="services">Services</a></li>
+      <li><a href="#" class="scroll-link" data-id="contact">Contact Us</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <strong>Guest</strong> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Transactions</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- 
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    -->
+  </div><!-- /.navbar-collapse -->
+  </nav>
+  <!-- Code for Login / Signup Popup -->
+  <!-- Modal Log in -->
+<!--
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+	  <div class="modal-dialog" style="margin-top: 150px;">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel1">Login to ABC Bank</h4>
+	      </div>
+	      <form method="POST" action = "/login">
+	      <div class="modal-body" id="login_details">
+	        <span> Just enter your credentials and you'll be in!! </span> </br></br>
+	        *<span style="font-weight:bold;">Username</span><br />
+	        <input type="text" placeholder="Username" name="login_email" /><br /></br>
+	        *<span style="font-weight:bold;" >Password</span><br />
+	        <input type="password" placeholder="Password" name="login_password" /><br />
+	      </div>
+	      <div class="modal-footer" >
+			<input style="float: left" type="submit" class="btn btn-success" value="Log In" /> 
+	       <span class="fp-link"> <a href="#">Forgot Password?</a></span>
+	       </br></br>
+			<span> Not registered yet?</span>
+			 <span class="fp-link"><a href="#"> Sign Up!</a></span>
+	      </div>
+	      </form>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+ <!--Modal Login Ends -->
+ <!-- Modal Sign-up Starts -->
+<!--
+	<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+	  <div class="modal-dialog" style="margin-top: 100px;">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel2">Sign Up on Landing</h4>
+	      </div>
+	      <div class="modal-body" id="signup_details">
+	        <span >Full Name</span>
+	        <input type="text" placeholder="Full Name" name="register_name" /> </br></br>
+	        *<span >Email</span>
+	        <input type="text" placeholder="example@gmail.com" name="register_email" /></br></br>
+	        *<span >Password</span>
+	        <input type="password" placeholder="Password" name="register_password" /></br></br>
+	        *<span >Password Re-Type</span>
+	        <input type="password" placeholder="Re-type Password" name="re_register_password" />
+	      </div>
+	      <div class="modal-footer" >
+		<input style="float: left" type="button" class="btn btn-success"  value="Sign Me Up" /> 
+	       <span>&nbsp;&nbsp;&nbsp; Already a member? </span><span id="login-link" class="text-info" style="cursor:pointer;">  Login now  </span> 
+		 </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+  <!-- Modal Sign up ends! -->
+  <!-- End code for Login / Signup Popup -->
+
+    
+    <div class="content-section-a" id="contact">
+
+        <div class="container">
+				
+			<table border=1 >
+			<tr>
+				<td width=30%> <a href="/socgen_hackathon/update_cost"><img  src="img/Deal1.jpg"></a> </td>
+				<td width=30%> <a href="/update_cost"><img src="img/Deal2.jpg"></a> </td>
+				<td width=30%> <a href="/update_cost"><img src="img/Deal3.jpg"></a> </td>
+			</tr>	
+				
+			</table>
+		
+        <img width = 100% src="img/a_sum.jpg">
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li><a href="#home">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; ABC Bank 2014. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

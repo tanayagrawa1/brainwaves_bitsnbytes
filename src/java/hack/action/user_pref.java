@@ -6,11 +6,6 @@
 package hack.action;
 
 import hack.model.UserPreference;
-import hack.model.deal_bean;
-import hack.model.find_deals;
-import hack.model.get_Deals;
-import hack.model.insert_img;
-import hack.model.login_setter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -26,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author tanay
  */
-public class login_servlet extends HttpServlet {
+public class user_pref extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,39 +37,50 @@ public class login_servlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
-            String id=request.getParameter("login_email");
-            String pass=request.getParameter("login_password");
-            System.out.println(id+" "+pass);
-           login_setter ls= new login_setter();
-           String c=ls.login(id,pass);
-           if(c.equals("-1"))
+           int ary[] = new int[6];
+           String arry[] = new String[6];
+           String a;
+           ary[0] =Integer.parseInt(request.getParameter("movie"));
+           ary[1] =Integer.parseInt(request.getParameter("dine"));
+           ary[2] =Integer.parseInt(request.getParameter("eg"));
+           ary[3] =Integer.parseInt(request.getParameter("ca"));
+           ary[4] =Integer.parseInt(request.getParameter("air"));
+           ary[5] =Integer.parseInt(request.getParameter("bd"));
+           
+           arry[0]="movies";
+           arry[1]="food";
+           arry[2]="electronics";
+           arry[3]="clothing";
+           arry[4]="travel";
+           arry[5]="stationery";
+           
+           int i,j,c;
+           for(i=0;i<5;i++)
            {
-               System.out.println("Error");
-               response.sendRedirect("index.html");
+               for(j=i+1;j<6;j++)
+               {
+                   if(ary[i]<ary[j])
+                   {
+                       c=ary[i];
+                       ary[i]=ary[j];
+                       ary[j]=c;
+                       a=arry[i];
+                       arry[i]=arry[j];
+                       arry[j]=a;
+                       
+                   }
+               }
            }
            HttpSession session= request.getSession();
-           session.setAttribute("cust", c);
-           System.out.println(c);
            
            UserPreference up= new UserPreference();
-           int k=up.checkUser(c);
+           int k=up.updatePref(session.getAttribute("cust").toString(), arry, ary);
            if(k==0)
-               response.sendRedirect("/socgen_hackathon/questionnaire.html");
-           else
            {
-               find_deals fd = new find_deals();
-               deal_bean db[];
-               db =fd.find(c);
-               session.setAttribute("deals", db);
-               response.sendRedirect("/socgen_hackathon/home.html");
+               System.out.println("Kya bey LOUDU");
            }
-            
-            
-           //response.sendRedirect("/socgen_hackathon/Insert_servlet");
-               
-            
-            
+           
+           
         }
     }
 
@@ -93,7 +99,7 @@ public class login_servlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(login_servlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(user_pref.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -111,7 +117,7 @@ public class login_servlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(login_servlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(user_pref.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
